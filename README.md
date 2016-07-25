@@ -6,6 +6,23 @@ A card game engine for the Playtable that uses iTween and TouchScript.
 - Card
 - Deck
 
+Only fields intended for use are included in this documentation.
+
+#### Gestures
+- Card
+ - Move: 1+ fingers
+ - Rotate: 2 fingers
+ - Resize: not available
+ - Flip: Tap
+ - Add to deck: collision
+- Deck
+ - Move: 2+ fingers
+ - Rotate: 2+ fingers
+ - Resize: not available
+ - Flip: not available
+ - Shuffle: hold down, long press
+ - Recall: double tap
+
 ### CardManager.cs
 #### Properties
 | Property        | Type          | Description  |
