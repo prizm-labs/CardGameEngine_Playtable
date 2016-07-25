@@ -1,4 +1,15 @@
-﻿using UnityEngine;
+﻿/*
+ * Deck.cs
+ * 
+ * A Deck that holds and stacks Cards.
+ * Includes basic functionality such as dealing, shuffling and recalling cards.
+ * 
+ * Deck uses the following TouchScript Gestures: TransformGesture, TapGesture and
+ * LongPressGesture.
+ * 
+ */
+
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using TouchScript.Gestures;
@@ -8,22 +19,17 @@ public class Deck : MonoBehaviour {
 
 	public GameObject cardPrefab;
 	public Transform defaultTransform;
-	//public static Color defaultHighlight = Color.clear;
-	//public static Color addCardHighlight = Color.yellow;
+
 	public List<GameObject> cards = new List<GameObject>();
 	public List<GameObject> cardLibrary = new List<GameObject>();
-	//public float zOffset = -0.01f;
-	//public float startPos = 1f;
 
 	void OnEnable() {
-		//GetComponent<TapGesture>().Tapped += TapHandler;
 		GetComponent<TransformGesture>().TransformStarted += TransformHandler;
 		GetComponent<TapGesture> ().Tapped += TapHandler;
 		GetComponent<LongPressGesture> ().LongPressed += LongPressHandler;
 	}
 
 	void OnDisable() {
-		//GetComponent<TapGesture>().Tapped -= TapHandler;
 		GetComponent<TransformGesture>().TransformStarted -= TransformHandler;
 		GetComponent<TapGesture> ().Tapped -= TapHandler;
 		GetComponent<LongPressGesture> ().LongPressed -= LongPressHandler;
@@ -62,7 +68,6 @@ public class Deck : MonoBehaviour {
 
 	public void add(GameObject card) {
 		card.transform.parent = this.gameObject.transform;
-		//iTween.RotateTo(card, transform.eulerAngles, 0.5f);
 		iTween.RotateTo(card, transform.eulerAngles, 0.5f);
 		iTween.MoveTo (card, transform.position, 0.5f);
 		cards.Add (card);
@@ -74,9 +79,6 @@ public class Deck : MonoBehaviour {
 
 	public void deal(GameObject card, Vector3 pos) {
 		cards.Remove (card);
-
-		// rotation fix
-		//card.transform.rotation = Quaternion.Euler(transform.eulerAngles.x, 180, transform.eulerAngles.z);
 		card.transform.SetParent (null);
 		card.transform.position = pos;
 	}
@@ -119,10 +121,4 @@ public class Deck : MonoBehaviour {
 	public bool isEmpty() {
 		return cards.Count == 0;
 	}
-
-	/*
-	public void highlight(Color c) {
-		GetComponent<Renderer> ().material.color = c;
-	}
-	*/
 }
