@@ -46,6 +46,10 @@ public class Card : MonoBehaviour {
 	}
 
 	public void TapHandler (object sender, System.EventArgs e) {
+		flip ();
+	}
+
+	public void flip() {
 		iTween.RotateAdd (gameObject, iTween.Hash ("x", 0, "y", 180, "z", 0));
 	}
 

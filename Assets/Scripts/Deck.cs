@@ -18,7 +18,6 @@ using TouchScript.Behaviors;
 public class Deck : MonoBehaviour {
 
 	public GameObject cardPrefab;
-	public Transform defaultTransform;
 
 	public List<GameObject> cards = new List<GameObject>();
 	public List<GameObject> cardLibrary = new List<GameObject>();
