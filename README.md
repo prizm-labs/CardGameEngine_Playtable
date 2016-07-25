@@ -23,7 +23,7 @@ Only fields intended for use are included in this documentation.
  - Shuffle: hold down, long press
  - Recall: double tap
 
-### CardManager.cs
+## CardManager.cs
 #### Properties
 | Property        | Type          | Description  |
 | --------------- | ------------- | ------------ |
@@ -38,7 +38,7 @@ Only fields intended for use are included in this documentation.
 | createCard      | Vector2 pos      | GameObject    | Creates an instance of a cardPrefab at a given position. |
 | createCard      | float x, float y | GameObject    | Creates an instance of a cardPrefab at a given position. |
 
-### Card.cs
+## Card.cs
 #### Properties
 | Property        | Type          | Description  |
 | --------------- | ------------- | ------------ |
@@ -53,7 +53,7 @@ Only fields intended for use are included in this documentation.
 | setSpriteFront  | Sprite s         | void    | Sets the front Sprite of the card to a given Sprite. |
 | setSpriteBack   | Sprite s         | void    | Sets the back Sprite of the card to a give Sprite.   |
 
-### Deck.cs
+## Deck.cs
 #### Properties
 | Property        | Type             | Description  |
 | --------------- | ---------------- | ------------ |
