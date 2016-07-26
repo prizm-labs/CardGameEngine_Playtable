@@ -56,13 +56,14 @@ public class Deck : MonoBehaviour {
 		shuffle ();
 	}
 
-	public void createCard() {
+	public GameObject createCard() {
 		float dX = gameObject.transform.rotation.x;
 		float dY = gameObject.transform.rotation.y - 180;
 		float dZ = gameObject.transform.rotation.z;
 		GameObject newCard = (GameObject) Instantiate (cardPrefab, transform.position, Quaternion.Euler(new Vector3(dX, dY, dZ)));
 		add (newCard);
 		register (newCard);
+		return newCard;
 	}
 
 	public void add(GameObject card) {
