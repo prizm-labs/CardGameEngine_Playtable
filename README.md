@@ -64,7 +64,7 @@ Only fields intended for use are included in this documentation.
 #### Methods
 | Method          | Parameters       | Return  | Description  |
 | --------------- | ---------------- | ------- | ------------ |
-| createCard      |                  | void    | Creates an instance of a cardPrefab and adds/registers it to the deck. |
+| createCard      |                  | GameObject | Creates an instance of a cardPrefab and adds/registers it to the deck. |
 | add             | GameObject card  | void    | Adds a card to the deck. A card that collides with a deck will be added to the deck. |
 | register        | GameObject card  | void    | Registers a card to the deck. That card will be recalled to the deck on recall(). |
 | deal            | GameObject card, Vector3 pos | void | Deals a given card to the given position. |
