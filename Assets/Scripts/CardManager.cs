@@ -13,13 +13,15 @@ public class CardManager : MonoBehaviour {
 	public GameObject deckPrefab;
 	public GameObject cardPrefab;
 
+    /*
 	void Awake() {
 		// Example of creating a deck of 52 cards at (0, 0)
-		GameObject newDeck = createDeck (0, 0);
-		for (int i = 0; i < 52; i++) {
-			newDeck.GetComponent<Deck> ().createCard ();
-		}
+		// GameObject newDeck = createDeck (0, 0);
+		// for (int i = 0; i < 52; i++) {
+		//	newDeck.GetComponent<Deck> ().createCard ();
+		//}
 	}
+    */
 
 	public GameObject createDeck(Vector2 pos) {
 		return (GameObject) Instantiate (deckPrefab, new Vector3 (pos.x, pos.y, deckPrefab.transform.position.z), deckPrefab.transform.rotation);
