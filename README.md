@@ -58,8 +58,8 @@ Only fields intended for use are included in this documentation.
 | Property        | Type             | Description  |
 | --------------- | ---------------- | ------------ |
 | cardPrefab      | GameObject       | Holds the Card prefab. Can be referenced for default values. |
-| cards           | List<GameObject> | Holds the GameObjects of the cards currently in the deck.    |
-| cardLibrary     | List<GameObject> | Holds the GameObjects of the cards that have been registered by the deck and will return on recall().    |
+| cards           | List\<GameObject\> | Holds the GameObjects of the cards currently in the deck.    |
+| cardLibrary     | List\<GameObject\> | Holds the GameObjects of the cards that have been registered by the deck and will return on recall().    |
 
 #### Methods
 | Method          | Parameters       | Return  | Description  |
