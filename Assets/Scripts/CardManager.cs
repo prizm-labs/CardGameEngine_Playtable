@@ -16,10 +16,11 @@ public class CardManager : MonoBehaviour {
     /*
 	void Awake() {
 		// Example of creating a deck of 52 cards at (0, 0)
-		// GameObject newDeck = createDeck (0, 0);
-		// for (int i = 0; i < 52; i++) {
-		//	newDeck.GetComponent<Deck> ().createCard ();
-		//}
+		GameObject newDeck = createDeck (0, 0);
+		for (int i = 0; i < 52; i++) {
+			newDeck.GetComponent<Deck> ().createCard ();
+		}
+		newDeck.GetComponent<Deck> ().flip ();
 	}
     */
 

@@ -113,7 +113,11 @@ public class Deck : MonoBehaviour {
 	}
 
 	public void flip() {
-		iTween.RotateAdd (gameObject, iTween.Hash ("x", 0, "y", 180, "z", 0));
+		gameObject.transform.Rotate (new Vector3 (0, 180, 0));
+		foreach (GameObject card in cards) {
+			iTween.RotateTo(card, transform.eulerAngles, 0.5f);
+			iTween.MoveTo (card, transform.position, 0.5f);
+		}
 	}
 
 	public void swap(int a, int b) {
