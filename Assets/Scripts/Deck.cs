@@ -112,6 +112,10 @@ public class Deck : MonoBehaviour {
 		}
 	}
 
+	public void flip() {
+		iTween.RotateAdd (gameObject, iTween.Hash ("x", 0, "y", 180, "z", 0));
+	}
+
 	public void swap(int a, int b) {
 		GameObject tmp = cards [a];
 		cards [a] = cards [b];

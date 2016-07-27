@@ -70,4 +70,5 @@ Only fields intended for use are included in this documentation.
 | deal            | GameObject card, Vector3 pos | void | Deals a given card to the given position. |
 | recall          |                  | void    | Returns registered cards back to the deck. |
 | shuffle         |                  | void    | Shuffles the deck by selection. This will be updated in the future. |
+| flip            |                  | void    | Flips the card facedown/up. |
 | isEmpty         |                  | bool    | Returns true if the deck is empty, false otherwise. |
