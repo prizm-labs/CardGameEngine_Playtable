@@ -41,4 +41,20 @@ public class CardManager : MonoBehaviour {
 		Vector2 pos = new Vector2 (x, y);
 		return createCard (pos);
 	}
+
+	public GameObject createCardFromJSON(float x, float y, string jsonPath, string key) {
+		ImageLoader il = new ImageLoader ();
+		JSONObject fullJSON = il.parseJSON (jsonPath);
+		ImageLoader.PathMap pMap = il.getPathMap (key, fullJSON);
+		GameObject newCard = createCard (x, y);
+		Sprite back = Resources.Load<Sprite> ("cardSprites/" + pMap.imagePathBack);
+		Sprite front = Resources.Load<Sprite> ("cardSprites/" + pMap.imagePathFront);
+		newCard.GetComponent<Card> ().setSpriteBack (back);
+		newCard.GetComponent<Card> ().setSpriteFront (front);
+		return newCard;
+	}
+
+	public GameObject createCardFromJSON(Vector2 pos, string jsonPath, string key) {
+		return createCardFromJSON (pos.x, pos.y, jsonPath, key);
+	}
 }

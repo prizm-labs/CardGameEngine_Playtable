@@ -5,6 +5,7 @@ A card game engine for the Playtable that uses iTween and TouchScript.
 - CardManager
 - Card
 - Deck
+- ImageLoader
 
 Only fields intended for use are included in this documentation.
 
@@ -31,12 +32,15 @@ Only fields intended for use are included in this documentation.
 | deckPrefab      | GameObject    | Holds the Deck prefab. Can be referenced for default values. |
 
 #### Methods
-| Method          | Parameters       | Return        | Description  |
-| --------------- | ---------------- | ------------- | ------------ |
-| createDeck      | Vector2 pos      | GameObject    | Creates an instance of a deckPrefab at a given position. |
-| createDeck      | float x, float y | GameObject    | Creates an instance of a deckPrefab at a given position. |
-| createCard      | Vector2 pos      | GameObject    | Creates an instance of a cardPrefab at a given position. |
-| createCard      | float x, float y | GameObject    | Creates an instance of a cardPrefab at a given position. |
+| Method             | Parameters       | Return        | Description  |
+| ------------------ | ---------------- | ------------- | ------------ |
+| createDeck         | Vector2 pos      | GameObject    | Creates an instance of a deckPrefab at a given position. |
+| createDeck         | float x, float y | GameObject    | Creates an instance of a deckPrefab at a given position. |
+| createCard         | Vector2 pos      | GameObject    | Creates an instance of a cardPrefab at a given position. |
+| createCard         | float x, float y | GameObject    | Creates an instance of a cardPrefab at a given position. |
+| createCardFromJSON | Vector2 pos, string jsonPath, string key      | GameObject    | Creates an instance of a cardPrefab at a given position, from a user constructed json file with properties at the given key. |
+| createCardFromJSON | float x, float y, string jsonPath, string key | GameObject    | Creates an instance of a cardPrefab at a given position, from a user constructed json file with properties at the given key. |
+    
 
 ## Card.cs
 #### Properties
@@ -72,3 +76,15 @@ Only fields intended for use are included in this documentation.
 | shuffle         |                  | void    | Shuffles the deck by selection. This will be updated in the future. |
 | flip            |                  | void    | Flips the card facedown/up. |
 | isEmpty         |                  | bool    | Returns true if the deck is empty, false otherwise. |
+
+## ImageLoader.cs
+#### Properties
+| Property        | Type             | Description  |
+| --------------- | ---------------- | ------------ |
+| PathMap         | Class            | Holds information for a card's instance information from json. |
+
+#### Methods
+| Method          | Parameters       | Return     | Description  |
+| --------------- | ---------------- | ---------- | ------------ |
+| parseJSON       | string jsonPath  | JSONObject | Parses jsonPath (json) file from the Resources folder and returns it as a JSONObject. |
+| getPathMap      | string key, JSONObject json | PathMap | Returns a PathMap at a given key from a JSONObject. |
